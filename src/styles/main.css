@@ -1,0 +1,6 @@
+@import "./reset.css";
+
+.background {
+    background: url('../images/background.png');
+    height: 100vh;
+}
