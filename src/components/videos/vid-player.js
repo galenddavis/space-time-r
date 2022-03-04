@@ -9,8 +9,8 @@ export const VideoPlayer = () => {
 
     // Resets video player if videoId prop changes
     // useEffect(() => {
-    //     setVideoSrc(videoId)
-    // }, [videoId])
+        
+    // }, [])
 
     // Selects a new random video from the list
     const shuffleVideo = (numVids) => {

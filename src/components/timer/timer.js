@@ -55,7 +55,7 @@ export const Timer = ({ duration, switchClocks }) => {
         if (running) {
             interval = setInterval(() => {
                 countDown()
-            }, 0.5)
+            }, 1000)
         } 
         return () => clearInterval(interval)
     }, [running, countDown])
