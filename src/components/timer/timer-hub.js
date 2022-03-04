@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Timer } from './timer';
+import "./timer.css";
 
 export const TimerHub = () => {
     const defaultDuration = 25;
@@ -28,7 +29,7 @@ export const TimerHub = () => {
     }
 
     return (
-        <div className='timer-hub'>
+        <div className='timer-container'>
             <section className='timer-tabs'>
                 <span onClick={() => setCurrentClock(defaultDuration) }>Space Time</span>
                 <span onClick={() => setCurrentClock(shortBreak) }>Short Break</span>
