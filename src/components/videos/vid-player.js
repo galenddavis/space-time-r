@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
+import "./vid-player.css"
 import { VideoIndex } from './vid-index';
 const Util = require('../../util/vid-utils');
 
 export const VideoPlayer = () => {
     const [videoSrc, setVideoSrc] = useState(Util.videos[0].id)
     const [player, setPlayer] = useState(null)
-
-    // Resets video player if videoId prop changes
-    // useEffect(() => {
-        
-    // }, [])
 
     // Selects a new random video from the list
     const shuffleVideo = (numVids) => {
@@ -40,14 +36,18 @@ export const VideoPlayer = () => {
     return (
         <div className='video-container'>
             <YouTube
-                className='video'
+                className='video-player'
                 videoId={videoSrc}
                 opts={Util.opts}
                 onReady={onReady}
             />
             <section className='vid-buttons'>
+                <button onClick={() => playVid()}>Play</button>
+                <button onClick={() => pauseVid()}>Pause</button>
+                <button onClick={() => shuffleVideo(Util.videos.length)}>Shuffle</button>
                 <VideoIndex changeVideo={changeVideo} />
             </section>
         </div>
     )
 }
+
