@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
 import "./vid-player.css"
 import { VideoIndex } from './vid-index';
+import DialogueBox from '../../images/dialogue-box.png';
+import DialogueBorder from '../../images/dialogue-border2.png';
 const Util = require('../../util/vid-utils');
 
 export const VideoPlayer = () => {
@@ -35,17 +37,20 @@ export const VideoPlayer = () => {
 
     return (
         <div className='video-container'>
-            <YouTube
-                className='video-player'
-                videoId={videoSrc}
-                opts={Util.opts}
-                onReady={onReady}
-            />
-            <section className='vid-buttons'>
+            <VideoIndex changeVideo={changeVideo} />
+            <section className='vid-buttons' style={{
+                backgroundImage: `url(${DialogueBox})`,
+                borderImage: `url(${DialogueBorder}) 25% / 30px 30px / 0 round`
+            }}>
+                <YouTube
+                    className='video-player'
+                    videoId={videoSrc}
+                    opts={Util.opts}
+                    onReady={onReady}
+                />
                 <button onClick={() => playVid()}>Play</button>
                 <button onClick={() => pauseVid()}>Pause</button>
                 <button onClick={() => shuffleVideo(Util.videos.length)}>Shuffle</button>
-                <VideoIndex changeVideo={changeVideo} />
             </section>
         </div>
     )
