@@ -1,4 +1,4 @@
-import Timer from './timer-test'
+import Timer from './timer/timer-test'
 import './App.css'
 
 function App() {
