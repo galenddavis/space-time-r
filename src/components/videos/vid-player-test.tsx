@@ -19,9 +19,6 @@ const VideoPlayer = ({ video }: VideoProps) => {
     const [muted, setMuted] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
-    // useEffect(() => {
-    //   setVidSrc(videoId)
-    // }, [videoId])
     
     useEffect(() => {
       setVidSrc(Util.videos[playlistIdx].id)
@@ -47,10 +44,6 @@ const VideoPlayer = ({ video }: VideoProps) => {
     const pauseVid = () => {
         setPlaying(!playing)
     }
-
-    // const changeVol = (event) => {
-    //     setVolume(event.target.value)
-    // }
 
     const muteTrack = () => {
         setMuted(!muted)
