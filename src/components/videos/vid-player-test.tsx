@@ -3,11 +3,7 @@ import { Video, Util } from "../utils/vid-utils"
 import ReactPlayer from 'react-player/lazy'
 
 
-// interface Video {
-//     title: string,
-//     id: string
-// }
-
+// Video Props structure sent from App.tsx with default video. Potentially don't need
 interface VideoProps {
     video: Video
 }
@@ -16,7 +12,6 @@ const VideoPlayer = ({ video }: VideoProps) => {
     const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
     const [vidSrc, setVidSrc] = useState<string>(video.id || Util.videos[playlistIdx].id)
     const [playing, setPlaying] = useState<boolean>(true)
-    const [muted, setMuted] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
     
@@ -42,11 +37,13 @@ const VideoPlayer = ({ video }: VideoProps) => {
     }
 
     const pauseVid = () => {
+        const button = document.getElementsByClassName("testBtn")[0]
+        if (!playing) {
+            button.classList.add("paused")
+        } else {
+            button.classList.remove("paused")
+        }
         setPlaying(!playing)
-    }
-
-    const muteTrack = () => {
-        setMuted(!muted)
     }
  
     return (
@@ -54,8 +51,8 @@ const VideoPlayer = ({ video }: VideoProps) => {
                 <div className="controls-container">
                     <button onClick={() => nextTrack()}>Next</button>
                     <button onClick={() => prevTrack()}>Previous</button>
-                    <button onClick={() => muteTrack()}>Mute</button>
                     <button onClick={() => pauseVid()}>{playing ? "Pause" : "Play"}</button>
+                    <button className="testBtn" onClick={() => pauseVid()}></button>
                     <input 
                         onChange={event => setVolume(Number(event.target.value))} 
                         type="range" 
@@ -68,10 +65,9 @@ const VideoPlayer = ({ video }: VideoProps) => {
                 </div>
             <ReactPlayer 
                 url={`https://www.youtube.com/watch?v=${vidSrc}`}
-                width="100%"
-                height="100%"
+                width="200px"
+                height="200px"
                 playing={playing}
-                muted={muted}
                 volume={volume}
                 />
 

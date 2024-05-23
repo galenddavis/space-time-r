@@ -1,8 +1,12 @@
+
+// Exporting Video interface structure
 export interface Video {
     title: string,
     id: string
   }
 
+
+// Exporting Video Object
 export const Util = {
 
     // 14 Vids
