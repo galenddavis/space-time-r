@@ -1,3 +1,8 @@
+export interface Video {
+    title: string,
+    id: string
+  }
+
 export const Util = {
 
     // 14 Vids
@@ -71,4 +76,4 @@ export const Util = {
     }
 }
 
-// module.exports = Util;
+module.exports = Util;

@@ -1,41 +1,64 @@
 import { useState, useEffect } from 'react';
-import { Util } from "../utils/vid-utils"
+import { Video, Util } from "../utils/vid-utils"
 import ReactPlayer from 'react-player/lazy'
-// import "https://www.youtube.com/iframe_api"
 
 
-// type vidPlayer = {
-//     height: string,
-//     width: string,
-//     videoId: string,
-//     playerVars: object,
-//     events: object
+// interface Video {
+//     title: string,
+//     id: string
 // }
 
-interface VidPlayerProps {
-    videoId: string
+interface VideoProps {
+    video: Video
 }
 
-const VideoPlayer = ({ videoId }: VidPlayerProps) => {
+const VideoPlayer = ({ video }: VideoProps) => {
+    const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
+    const [vidSrc, setVidSrc] = useState<string>(video.id || Util.videos[playlistIdx].id)
+    const [playing, setPlaying] = useState<boolean>(true)
+    const [muted, setMuted] = useState<boolean>(false)
+    // const [volume, setVolume] = useState<number>(1)
 
     // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = "https://www.youtube.com/iframe_api"
-    //     script.async = true;
-    //     document.body.appendChild(script)
-    // }, [])
+    //   setVidSrc(videoId)
+    // }, [videoId])
+    
+    useEffect(() => {
+      setVidSrc(Util.videos[playlistIdx].id)
+    }, [playlistIdx])
+    
 
-    const [vidSrc, setVidSrc] = useState<string>(videoId || Util.videos[0].id) 
-    // const [player, setPlayer] = useState<vidPlayer | null>(null)
+    const nextTrack = () => {
+        setPlaylistIdx(playlistIdx + 1)
+    }
 
-    // const onYoutubeIframeAPIReady = () => {
-    //     setPlayer(new YT.Player("player", {
+    const pauseVid = () => {
+        setPlaying(!playing)
+    }
 
-    //     }))
+    // const changeVol = (event) => {
+    //     setVolume(event.target.value)
+    // }
 
+    const muteTrack = () => {
+        setMuted(!muted)
+    }
+ 
     return (
         <div>
-            <ReactPlayer url={vidSrc} />
+            <ReactPlayer 
+                url={`https://www.youtube.com/watch?v=${vidSrc}`}
+                width="100%"
+                height="100%"
+                playing={playing}
+                muted={muted}
+                // volume={volume}
+                />
+                <button onClick={() => nextTrack()}>Next</button>
+                <button onClick={() => muteTrack()}>Mute</button>
+                <button onClick={() => pauseVid()}>{playing ? "Pause" : "Play"}</button>
+                {/* <input onChange={() => changeVol(this)} type="range" name="Volume" id="Volume" min='0' max="1" step="0.1" value="1"/> */}
+
         </div>
     )
 }
