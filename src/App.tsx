@@ -1,20 +1,22 @@
 import Timer from './components/timer/timer'
 import VideoPlayer from './components/videos/vid-player-test'
+import { Video, Util } from "./components/utils/vid-utils"
 import './App.css'
 
-// export function addLibrary(libraryUrl) {
-//   const script = document.createElement("script");
-//   script.src = libraryUrl
-//   script.async = true
-//   document.body.appendChild(script)
-// }
 
 function App() {
 
+  const defaultVideo: Video = {
+    title: Util.videos[0].title,
+    id: Util.videos[0].id
+  }
+
+  
+  
   return (
     <>
       <Timer/>
-      <VideoPlayer />
+      <VideoPlayer video ={defaultVideo} />
     </>
   )
 }
