@@ -1,4 +1,4 @@
-const Util = {
+export const Util = {
 
     // 14 Vids
     videos: [
@@ -71,4 +71,4 @@ const Util = {
     }
 }
 
-module.exports = Util;
+// module.exports = Util;
