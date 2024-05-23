@@ -8,6 +8,18 @@ export const Util = {
     // 14 Vids
     videos: [
         {
+            title: "Brian Eno - New Space Music",
+            id: "Jl1_m1OtkpE"
+        },
+        {
+            title: "Ambient 3 : Meditations [Stretched]",
+            id: "G1xuZSP05Jo"
+        },
+        {
+            title: "★ Space Ambient Music",
+            id: "ztVV54sPOns"
+        },
+        {
             title: "Space Traveling [Lo-Fi / Jazz Hop / Chill Mix",
             id: "3ST4fDVyAzA"
         },
@@ -43,22 +55,26 @@ export const Util = {
             title: "COSMIC RELAXATION: 8 HOURS of 4K Deep Space NASA Footage + Chillout Music for Studying, Working, Etc",
             id: "Y_plhk1FUQA"
         },
-        {
-            title: "Ｓｐａｃｅ　Ｌｏｕｎｇｅ　|　Ｃｈｉｌｌ　Ｍｉｘ",
-            id: "lG_sddVeoh0"
-        },
-        {
-            title: "Just chilling...",
-            id: "TdBSoy9F9NA"
-        },
-        {
-            title: "Cowboy Bebop [Tributes Mix]*",
-            id: "njxfE1qRA2g"
-        },
-        {
-            title: "D.I.Y tuning - Vangelis - Blade Runner Blues 432Hz",
-            id:"XB8EAWKXHsw"
-        },
+        // {
+        //     // Can't Embed
+        //     title: "Ｓｐａｃｅ Ｌｏｕｎｇｅ | Ｃｈｉｌｌ Ｍｉｘ", 
+        //     id: "lG_sddVeoh0"
+        // },
+        // {
+        //     // Can't Embed
+        //     title: "Just chilling...",
+        //     id: "TdBSoy9F9NA"
+        // },
+        // {
+        //     // Can't Embed
+        //     title: "Cowboy Bebop [Tributes Mix]*",
+        //     id: "njxfE1qRA2g"
+        // },
+        // {
+        //     cant' embed
+        //     title: "Blade Runner Soundtrack, Vangelis 1982",
+        //     id:"L1yKKhLdpnU"
+        // },
         {
             title: "Celeste - Complete Soundtrack - Full OST Album",
             id: "2JsYHpiH2xs"
@@ -75,5 +91,3 @@ export const Util = {
         }
     }
 }
-
-module.exports = Util;
