@@ -30,14 +30,14 @@ const VideoPlayer = ({ video }: VideoProps) => {
     
     const prevTrack = () => {
         let prevIdx = playlistIdx - 1
-        if (prevIdx <= 0) {
+        if (prevIdx < 0) {
             prevIdx = Util.videos.length - 1
         }
         setPlaylistIdx(prevIdx)
     }
 
     const pauseVid = () => {
-        const button = document.getElementsByClassName("testBtn")[0]
+        const button = document.getElementsByClassName("customBtn")[1]
         if (!playing) {
             button.classList.add("paused")
         } else {
@@ -49,10 +49,9 @@ const VideoPlayer = ({ video }: VideoProps) => {
     return (
         <div>
                 <div className="controls-container">
-                    <button onClick={() => nextTrack()}>Next</button>
-                    <button onClick={() => prevTrack()}>Previous</button>
-                    <button onClick={() => pauseVid()}>{playing ? "Pause" : "Play"}</button>
-                    <button className="testBtn" onClick={() => pauseVid()}></button>
+                    <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
+                    <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
+                    <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
                     <input 
                         onChange={event => setVolume(Number(event.target.value))} 
                         type="range" 

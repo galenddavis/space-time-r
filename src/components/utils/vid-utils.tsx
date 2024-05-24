@@ -12,6 +12,10 @@ export const Util = {
     // 14 Vids
     videos: [
         {
+            title: "Celeste - Complete Soundtrack - Full OST Album",
+            id: "2JsYHpiH2xs"
+        },
+        {
             title: "Brian Eno - New Space Music",
             id: "Jl1_m1OtkpE"
         },
@@ -79,10 +83,7 @@ export const Util = {
         //     title: "Blade Runner Soundtrack, Vangelis 1982",
         //     id:"L1yKKhLdpnU"
         // },
-        {
-            title: "Celeste - Complete Soundtrack - Full OST Album",
-            id: "2JsYHpiH2xs"
-        },
+        
     ],
     opts: {
         width: "560",
