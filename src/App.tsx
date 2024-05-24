@@ -1,5 +1,5 @@
 import Timer from './components/timer/timer'
-import VideoPlayer from './components/videos/vid-player-test'
+import VideoPlayer from './components/videos/vid-player'
 import { Video, Util } from "./components/utils/vid-utils"
 
 

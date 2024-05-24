@@ -1,73 +1,83 @@
-import {useEffect, useState} from 'react';
-// import Youtube from 'react-youtube';
-// import { VideoIndex } from './vid-index';
-import { Util } from "../utils/vid-utils"
+import { useState, useEffect } from 'react';
+import { Video, Util } from "../utils/vid-utils"
+import ReactPlayer from 'react-player/lazy'
 
-interface VidPlayerProps {
-    videoId: string
+
+// Video Props structure sent from App.tsx with default video. Potentially don't need
+interface VideoProps {
+    video: Video
 }
 
-const VidPlayer = ({ videoId }: VidPlayerProps) => {
-    const [videoSrc, setVideoSrc] = useState<string>(videoId || Util.videos[0].id)
-    const [player, setPlayer] = useState<any>(null)
+const VideoPlayer = ({ video }: VideoProps) => {
+    const [vidTitle, setVidTitle] = useState<string>(video.title)
+    const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
+    const [vidSrc, setVidSrc] = useState<string>(video.id || Util.videos[playlistIdx].id)
+    const [playing, setPlaying] = useState<boolean>(false)
+    const [volume, setVolume] = useState<number>(1)
 
-    // Resets video player if videoId prop changes
+    
     useEffect(() => {
-        setVideoSrc(videoId)
-        console.log(videoSrc)
-    }, [videoId])
+      setVidSrc(Util.videos[playlistIdx].id)
+      setVidTitle(Util.videos[playlistIdx].title)
+    }, [playlistIdx])
+    
 
-    // Selects new random video from the list
-    const shuffleVideo = (numVids: number) => {
-        const randomNum = Math.floor(Math.random() * (numVids - 1) + 1)
-        setVideoSrc(Util.videos[randomNum].id)
-    }
-
-    // Select and Change Video
-    const changeVideo = ({ videoId }: {videoId: string}): void => {
-        setVideoSrc(videoId)
-    }
-
-    // Pause Video
-    const pauseVid = () => {
-        player.pauseVideo()
-    }
-
-    // Play Video
-    const playVid = () => {
-        player.playVideo()
+    const nextTrack = () => {
+        let nextIdx = playlistIdx + 1
+        if (nextIdx === Util.videos.length) {
+            nextIdx = 0
+        }
+        setPlaylistIdx(nextIdx)
     }
     
-    const onReady = (event: any) => {
-        setPlayer(event.target)
+    const prevTrack = () => {
+        let prevIdx = playlistIdx - 1
+        if (prevIdx < 0) {
+            prevIdx = Util.videos.length - 1
+        }
+        setPlaylistIdx(prevIdx)
     }
 
+    const pauseVid = () => {
+        const button = document.getElementsByClassName("customBtn")[1]
+        if (!playing) {
+            button.classList.add("paused")
+        } else {
+            button.classList.remove("paused")
+        }
+        setPlaying(!playing)
+    }
+ 
     return (
-        <div className='video-player-container'>
-            <iframe 
-            width="560" 
-            height="315" 
-            src={`https://www.youtube.com/embed/${videoSrc}`}
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen="false"></iframe>
-            {/* <Youtube
-                className='video-player'
-                videoId={videoSrc}
-                opts={Util.opts}
-                onReady={onReady}
-            />
-            <section className='video-buttons'>
-                <VideoIndex changeVideo={() => changeVideo} />
-                <img src={shuffleBtn} alt="play" onClick={() => shuffleVideo(Util.videos.length)} />
-                <img src={playBtn} alt="play" onClick={() => playVid()} />
-                <img src={pauseBtn} alt="pause" onClick={() => pauseVid()} />
-            </section> */}
+        <div>
+            <h1 className="video-title">{vidTitle}</h1>
+            <div className="controls-container">
+                <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
+                <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
+                <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
+                <input 
+                    onChange={event => setVolume(Number(event.target.value))} 
+                    type="range" 
+                    name="Volume" 
+                    id="Volume" 
+                    min='0' 
+                    max="1" 
+                    step="0.1"/>
+
+            </div>
+            <ReactPlayer
+                className="video-player"
+                url={`https://www.youtube.com/watch?v=${vidSrc}`}
+                width="200px"
+                height="200px"
+                playing={playing}
+                volume={volume}
+                />
+
         </div>
     )
-
 }
 
-export default VidPlayer;
+
+export default VideoPlayer;
+
