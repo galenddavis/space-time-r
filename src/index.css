@@ -51,6 +51,15 @@ button {
 
 /* Custom CSS to be moved later */
 
+.video-player {
+  display: none;
+}
+
+.video-title {
+  font-size: 20px;
+  color: #f3f3f3;
+}
+
 .controls-container {
   height: 300px;
   display: flex;

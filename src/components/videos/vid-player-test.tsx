@@ -9,14 +9,16 @@ interface VideoProps {
 }
 
 const VideoPlayer = ({ video }: VideoProps) => {
+    const [vidTitle, setVidTitle] = useState<string>(video.title)
     const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
     const [vidSrc, setVidSrc] = useState<string>(video.id || Util.videos[playlistIdx].id)
-    const [playing, setPlaying] = useState<boolean>(true)
+    const [playing, setPlaying] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
     
     useEffect(() => {
       setVidSrc(Util.videos[playlistIdx].id)
+      setVidTitle(Util.videos[playlistIdx].title)
     }, [playlistIdx])
     
 
@@ -48,21 +50,23 @@ const VideoPlayer = ({ video }: VideoProps) => {
  
     return (
         <div>
-                <div className="controls-container">
-                    <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
-                    <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
-                    <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
-                    <input 
-                        onChange={event => setVolume(Number(event.target.value))} 
-                        type="range" 
-                        name="Volume" 
-                        id="Volume" 
-                        min='0' 
-                        max="1" 
-                        step="0.1"/>
+            <h1 className="video-title">{vidTitle}</h1>
+            <div className="controls-container">
+                <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
+                <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
+                <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
+                <input 
+                    onChange={event => setVolume(Number(event.target.value))} 
+                    type="range" 
+                    name="Volume" 
+                    id="Volume" 
+                    min='0' 
+                    max="1" 
+                    step="0.1"/>
 
-                </div>
-            <ReactPlayer 
+            </div>
+            <ReactPlayer
+                className="video-player"
                 url={`https://www.youtube.com/watch?v=${vidSrc}`}
                 width="200px"
                 height="200px"
