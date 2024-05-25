@@ -15,7 +15,7 @@ const VideoPlayer = ({ video }: VideoProps) => {
     const [playing, setPlaying] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
-    
+    // Updates the vidSrc when the playlistIdx changes via nextTrack or prevTrack functions
     useEffect(() => {
       setVidSrc(Util.videos[playlistIdx].id)
       setVidTitle(Util.videos[playlistIdx].title)
