@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Video, Util } from "../utils/vid-utils"
-import ReactPlayer from 'react-player/lazy'
+import { Video, Util } from "../utils/vid-utils";
+import ReactPlayer from 'react-player/lazy';  
+import "./vid-player.css";
 
 
 // Video Props structure sent from App.tsx with default video. Potentially don't need
@@ -55,6 +56,7 @@ const VideoPlayer = ({ video }: VideoProps) => {
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
                 <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
                 <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
+            </div>
                 <input 
                     onChange={event => setVolume(Number(event.target.value))} 
                     type="range" 
@@ -63,8 +65,6 @@ const VideoPlayer = ({ video }: VideoProps) => {
                     min='0' 
                     max="1" 
                     step="0.1"/>
-
-            </div>
             <ReactPlayer
                 className="video-player"
                 url={`https://www.youtube.com/watch?v=${vidSrc}`}
