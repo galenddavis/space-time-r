@@ -41,7 +41,7 @@
   }
   
   .playBtn.paused {
-    background-image: url("./assets/play-btn-animation-sprite-sheet.png");
+    background-image: url("../../assets/play-btn-animation-sprite-sheet.png");
     background-position: -196px 0;
   }
   
