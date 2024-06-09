@@ -1,6 +1,6 @@
 import Timer from './components/timer/timer'
 import VideoPlayer from './components/videos/vid-player'
-import { Video, Util } from "./components/utils/vid-utils"
+// import { Video, videoList } from "./components/utils/vid-utils"
 
 
 import './App.css'
@@ -8,17 +8,21 @@ import './App.css'
 
 function App() {
 
-  const defaultVideo: Video = {
-    title: Util.videos[0].title,
-    id: Util.videos[0].id
-  }
+  // Commented out after removing props from VidPlayer. 
+  // May need to bring back after introducing context 
+  
+  // const defaultVideo: Video = {
+  //   title: videoList[0].title,
+  //   id: videoList[0].id
+  // }
 
   
   
   return (
     <>
       <Timer/>
-      <VideoPlayer video ={defaultVideo} />
+      {/* <VideoPlayer video ={defaultVideo} /> */}
+      <VideoPlayer />
     </>
   )
 }
