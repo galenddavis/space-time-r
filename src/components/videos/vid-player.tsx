@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Video, videoList } from "../utils/vid-utils";
+import { videoList } from "../utils/vid-utils";
+// import { Video, videoList } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
 import "./vid-player.css";
 
