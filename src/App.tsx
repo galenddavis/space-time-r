@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { VideoContext } from './components/contexts/videoContext';
 import Timer from './components/timer/timer'
 import VideoPlayer from './components/videos/vid-player'
 import VideoIndex from './components/videos/vid-index'
@@ -8,7 +10,7 @@ import './App.css'
 
 
 function App() {
-
+  const currentVid = useContext(VideoContext)
   // Commented out after removing props from VidPlayer. 
   // May need to bring back after introducing context 
 
@@ -23,7 +25,9 @@ function App() {
     <>
       <Timer/>
       {/* <VideoPlayer video ={defaultVideo} /> */}
-      <VideoPlayer />
+      <VideoContext.Provider value={currentVid}>
+        <VideoPlayer />
+      </VideoContext.Provider>
       <VideoIndex />
     </>
   )
