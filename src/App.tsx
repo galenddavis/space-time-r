@@ -27,8 +27,8 @@ function App() {
       {/* <VideoPlayer video ={defaultVideo} /> */}
       <VideoContext.Provider value={currentVid}>
         <VideoPlayer />
+        <VideoIndex />
       </VideoContext.Provider>
-      <VideoIndex />
     </>
   )
 }
