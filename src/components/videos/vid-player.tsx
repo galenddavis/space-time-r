@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { videoList } from "../utils/vid-utils";
 // import { Video, videoList } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
-import "./vid-player.css";
+// import "./vid-player.css";
 
 
 // Video Props structure sent from App.tsx with default video. Potentially don't need
