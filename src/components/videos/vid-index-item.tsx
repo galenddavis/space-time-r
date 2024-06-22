@@ -6,6 +6,8 @@ interface VideoProps {
 
 const VideoIndexItem = ({ video }: VideoProps) => {
 
+    
+
     return (
         <div>
             <p className="video-idx-title">

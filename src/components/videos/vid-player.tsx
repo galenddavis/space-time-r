@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { videoList } from "../utils/vid-utils";
 // import { Video, videoList } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
+// import { VideoContext } from '../contexts/videoContext';
 // import "./vid-player.css";
 
 
@@ -11,9 +12,13 @@ import ReactPlayer from 'react-player/lazy';
 // }
 
 const VideoPlayer = () => {
+    // const currentVid = useContext(VideoContext)
+    // const currentIdx = videoList.indexOf(currentVid)
+
     const [vidTitle, setVidTitle] = useState<string>("")
     const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
     const [vidSrc, setVidSrc] = useState<string>(videoList[playlistIdx].id)
+    // const [vidSrc, setVidSrc] = useState<string>(videoList[playlistIdx].id)
     const [playing, setPlaying] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
@@ -42,7 +47,7 @@ const VideoPlayer = () => {
     }
 
     const pauseVid = () => {
-        const button = document.getElementsByClassName("customBtn")[1]
+        const button = document.getElementsByClassName("playBtn")[0]
         if (!playing) {
             button.classList.add("paused")
         } else {
