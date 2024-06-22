@@ -1,8 +1,9 @@
 // import { useContext, useState } from 'react';
 // import { VideoContext } from './components/contexts/videoContext';
 import Timer from './components/timer/timer'
-import VideoPlayer from './components/videos/vid-player'
+// import VideoPlayer from './components/videos/vid-player'
 import VideoIndex from './components/videos/vid-index'
+import VideoCommander from './components/videos/vid-command-center'
 // import { Video, videoList } from './components/utils/vid-utils';
 
 
@@ -27,7 +28,8 @@ function App() {
     <>
       <Timer/>
       {/* <VideoContext.Provider value={currentVid}> */}
-        <VideoPlayer />
+        {/* <VideoPlayer /> */}
+        <VideoCommander/>
         <VideoIndex />
       {/* </VideoContext.Provider> */}
     </>

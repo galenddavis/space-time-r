@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
-import { videoList } from "../utils/vid-utils";
-// import { Video, videoList } from "../utils/vid-utils";
+// import { videoList } from "../utils/vid-utils";
+import { Video, videoList } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
 // import { VideoContext } from '../contexts/videoContext';
 // import "./vid-player.css";
 
 
 // Video Props structure sent from App.tsx with default video. Potentially don't need
-// interface VideoProps {
-//     video: Video
-// }
+interface VideoProps {
+    currVideo: Video, 
+    playIndex: number
+}
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ currVideo, playIndex }: VideoProps) => {
     // const currentVid = useContext(VideoContext)
     // const currentIdx = videoList.indexOf(currentVid)
 
@@ -25,9 +26,16 @@ const VideoPlayer = () => {
     // Updates the vidSrc when the playlistIdx changes via nextTrack or prevTrack functions
     // Sets video to first in list on page load (Removes need to pass VideoProps. This may change on introducting context)
     useEffect(() => {
-      setVidSrc(videoList[playlistIdx].id)
-      setVidTitle(videoList[playlistIdx].title)
-    }, [playlistIdx])
+        // const foundIdx = videoList.indexOf(currVideo)
+        setVidSrc(currVideo.id)
+        setVidTitle(currVideo.title)
+        setPlaylistIdx(playIndex) 
+    }, [currVideo, currVideo.id, currVideo.title, playIndex])
+    
+    // useEffect(() => {
+    //   setVidSrc(videoList[playlistIdx].id)
+    //   setVidTitle(videoList[playlistIdx].title)
+    // }, [playlistIdx])
     
 
     const nextTrack = () => {
