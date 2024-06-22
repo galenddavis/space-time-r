@@ -1,16 +1,16 @@
-import { useContext } from 'react';
-import { VideoContext } from './components/contexts/videoContext';
+// import { useContext, useState } from 'react';
+// import { VideoContext } from './components/contexts/videoContext';
 import Timer from './components/timer/timer'
 import VideoPlayer from './components/videos/vid-player'
 import VideoIndex from './components/videos/vid-index'
-// import { Video, videoList } from "./components/utils/vid-utils"
+// import { Video, videoList } from './components/utils/vid-utils';
 
 
 import './App.css'
 
 
 function App() {
-  const currentVid = useContext(VideoContext)
+  // const currentVid = useContext(VideoContext)
   // Commented out after removing props from VidPlayer. 
   // May need to bring back after introducing context 
 
@@ -19,16 +19,17 @@ function App() {
   //   id: videoList[0].id
   // }
 
+  // const [currentVid, setCurrentVid] = useState(defaultVideo)
+
   
   
   return (
     <>
       <Timer/>
-      {/* <VideoPlayer video ={defaultVideo} /> */}
-      <VideoContext.Provider value={currentVid}>
+      {/* <VideoContext.Provider value={currentVid}> */}
         <VideoPlayer />
         <VideoIndex />
-      </VideoContext.Provider>
+      {/* </VideoContext.Provider> */}
     </>
   )
 }

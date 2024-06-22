@@ -6,7 +6,7 @@ const defaultVideo: Video = {
     id: videoList[0].id
 }
 
-export const VideoContext = createContext<Video | undefined>(defaultVideo)
+export const VideoContext = createContext<Video>(defaultVideo)
 
 
 // Checks to ensure VideoContext is not undefined. Throws error if so.  
