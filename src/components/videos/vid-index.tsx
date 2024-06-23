@@ -1,11 +1,13 @@
 // import { useState, useEffect } from "react";
 import VideoIndexItem from "./vid-index-item";
-import { videoList } from "../utils/vid-utils";
+import { Video, videoList } from "../utils/vid-utils";
 import { useState } from "react";
 
+interface IndexProps {
+    selectTrack: (video: Video) => void
+}
 
-
-const VideoIndex = () => {
+const VideoIndex = ({ selectTrack }: IndexProps) => {
     const [indexVisible, setIndexVisible] = useState<boolean>(false)
 
     const showIndex =() => {
@@ -25,7 +27,10 @@ const VideoIndex = () => {
             </button>
             <ul className="video-index-container hidden">
                 {videoList.map(video => (
-                    <li className="video-index-item" key={video.id}>
+                    <li className="video-index-item" 
+                        key={video.id}
+                        onClick={() => selectTrack(video)}    
+                    >
                         <VideoIndexItem
                             video={video}
                         />

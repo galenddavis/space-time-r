@@ -1,75 +1,38 @@
-import { useState, useEffect } from 'react';
-// import { videoList } from "../utils/vid-utils";
-import { Video, videoList } from "../utils/vid-utils";
+import { useState } from 'react';
+import { Video } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
-// import { VideoContext } from '../contexts/videoContext';
-// import "./vid-player.css";
 
 
-// Video Props structure sent from App.tsx with default video. Potentially don't need
+// Video Props structure sent from Vid Commander.tsx.
 interface VideoProps {
     currVideo: Video, 
-    playIndex: number
+    nextTrack: () => void,
+    prevTrack: () => void,
+    pauseTrack: () => void,
+    playing: boolean
 }
 
-const VideoPlayer = ({ currVideo, playIndex }: VideoProps) => {
-    // const currentVid = useContext(VideoContext)
-    // const currentIdx = videoList.indexOf(currentVid)
-
-    const [vidTitle, setVidTitle] = useState<string>("")
-    const [playlistIdx, setPlaylistIdx] = useState<number>(0) 
-    const [vidSrc, setVidSrc] = useState<string>(videoList[playlistIdx].id)
-    // const [vidSrc, setVidSrc] = useState<string>(videoList[playlistIdx].id)
-    const [playing, setPlaying] = useState<boolean>(false)
+const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: VideoProps) => {
+    // const [playing, setPlaying] = useState<boolean>(false)
     const [volume, setVolume] = useState<number>(1)
 
-    // Updates the vidSrc when the playlistIdx changes via nextTrack or prevTrack functions
-    // Sets video to first in list on page load (Removes need to pass VideoProps. This may change on introducting context)
-    useEffect(() => {
-        // const foundIdx = videoList.indexOf(currVideo)
-        setVidSrc(currVideo.id)
-        setVidTitle(currVideo.title)
-        setPlaylistIdx(playIndex) 
-    }, [currVideo, currVideo.id, currVideo.title, playIndex])
-    
-    // useEffect(() => {
-    //   setVidSrc(videoList[playlistIdx].id)
-    //   setVidTitle(videoList[playlistIdx].title)
-    // }, [playlistIdx])
-    
-
-    const nextTrack = () => {
-        let nextIdx = playlistIdx + 1
-        if (nextIdx === videoList.length) {
-            nextIdx = 0
-        }
-        setPlaylistIdx(nextIdx)
-    }
-    
-    const prevTrack = () => {
-        let prevIdx = playlistIdx - 1
-        if (prevIdx < 0) {
-            prevIdx = videoList.length - 1
-        }
-        setPlaylistIdx(prevIdx)
-    }
-
-    const pauseVid = () => {
-        const button = document.getElementsByClassName("playBtn")[0]
-        if (!playing) {
-            button.classList.add("paused")
-        } else {
-            button.classList.remove("paused")
-        }
-        setPlaying(!playing)
-    }
+    // Controls playing a pausing of Video
+    // const pauseVid = () => {
+    //     const button = document.getElementsByClassName("playBtn")[0]
+    //     if (!playing) {
+    //         button.classList.add("paused")
+    //     } else {
+    //         button.classList.remove("paused")
+    //     }
+    //     setPlaying(!playing)
+    // }
  
     return (
         <div>
-            <h1 className="video-title">{vidTitle}</h1>
+            <h1 className="video-title">{currVideo.title}</h1>
             <div className="controls-container">
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
-                <button className="playBtn customBtn" onClick={() => pauseVid()}></button>
+                <button className="playBtn customBtn" onClick={() => pauseTrack()}></button>
                 <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
             </div>
                 <input 
@@ -82,7 +45,7 @@ const VideoPlayer = ({ currVideo, playIndex }: VideoProps) => {
                     step="0.1"/>
             <ReactPlayer
                 className="video-player"
-                url={`https://www.youtube.com/watch?v=${vidSrc}`}
+                url={`https://www.youtube.com/watch?v=${currVideo.id}`}
                 width="200px"
                 height="200px"
                 playing={playing}

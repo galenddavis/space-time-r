@@ -40,7 +40,7 @@
     background-image: url("../../assets/prev-btn-animation-sprite-sheet.png");
   }
   
-  .playBtn.paused {
+  .playBtn.playing {
     background-image: url("../../assets/play-btn-animation-sprite-sheet.png");
     background-position: -196px 0;
   }
