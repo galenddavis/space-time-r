@@ -13,19 +13,9 @@ interface VideoProps {
 }
 
 const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: VideoProps) => {
-    // const [playing, setPlaying] = useState<boolean>(false)
+    
     const [volume, setVolume] = useState<number>(1)
 
-    // Controls playing a pausing of Video
-    // const pauseVid = () => {
-    //     const button = document.getElementsByClassName("playBtn")[0]
-    //     if (!playing) {
-    //         button.classList.add("paused")
-    //     } else {
-    //         button.classList.remove("paused")
-    //     }
-    //     setPlaying(!playing)
-    // }
  
     return (
         <div>

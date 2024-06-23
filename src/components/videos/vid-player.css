@@ -22,10 +22,11 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     border-radius: 0;
-    height: 106px;
+    /* height: 106px; */
     width: 197px;
-    /* aspect-ratio: 1/1; */
-    border: "none";
+    aspect-ratio: 1.85/1;
+    border: none;
+    background-size: auto 100%;
   }
   
   .playBtn {
@@ -42,11 +43,11 @@
   
   .playBtn.playing {
     background-image: url("../../assets/play-btn-animation-sprite-sheet.png");
-    background-position: -196px 0;
+    background-position: 100% 0;
   }
   
   .nextBtn:hover, .prevBtn:hover, .playBtn:hover {
-    background-position: -196px 0;
+    background-position: 100% 0;
   }
   
   button:focus,
