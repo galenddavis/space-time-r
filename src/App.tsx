@@ -1,13 +1,13 @@
+import Timer from './components/timer/timer'
+import VideoCommander from './components/videos/vid-command-center'
+import './App.css'
 // import { useContext, useState } from 'react';
 // import { VideoContext } from './components/contexts/videoContext';
-import Timer from './components/timer/timer'
 // import VideoPlayer from './components/videos/vid-player'
-import VideoIndex from './components/videos/vid-index'
-import VideoCommander from './components/videos/vid-command-center'
+// import VideoIndex from './components/videos/vid-index'
 // import { Video, videoList } from './components/utils/vid-utils';
 
 
-import './App.css'
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
       {/* <VideoContext.Provider value={currentVid}> */}
         {/* <VideoPlayer /> */}
         <VideoCommander/>
-        <VideoIndex />
+        {/* <VideoIndex /> */}
       {/* </VideoContext.Provider> */}
     </>
   )
