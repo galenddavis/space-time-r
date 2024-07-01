@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { Video } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
 
@@ -9,10 +9,11 @@ interface VideoProps {
     nextTrack: () => void,
     prevTrack: () => void,
     pauseTrack: () => void,
-    playing: boolean
+    playing: boolean,
+    setIndexShown: (value: boolean) => (value: boolean)
 }
 
-const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: VideoProps) => {
+const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, setIndexShown }: VideoProps) => {
     
     const [volume, setVolume] = useState<number>(1)
 
@@ -24,6 +25,7 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: V
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
                 <button className="playBtn customBtn" onClick={() => pauseTrack()}></button>
                 <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
+                <button className="showIndex" onClick={() => setIndexShown()}>Show Index</button>
                 <input 
                     onChange={event => setVolume(Number(event.target.value))} 
                     type="range" 

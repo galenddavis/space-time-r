@@ -4,7 +4,7 @@ import { Video, videoList } from "../utils/vid-utils";
 import { useState } from "react";
 
 interface IndexProps {
-    selectTrack: (video: Video) => void
+    selectTrack: (video: Video) => void,
 }
 
 const VideoIndex = ({ selectTrack }: IndexProps) => {

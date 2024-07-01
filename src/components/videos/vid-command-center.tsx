@@ -17,6 +17,7 @@ const VideoCommander = () => {
     const [currentVid, setCurrentVid] = useState<Video>(defaultVideo) 
     const [currentIdx, setCurrentIdx] = useState<number>(0)
     const [playing, setPlaying] = useState<boolean>(false)
+    const [indexShown, setIndexShown] = useState<boolean>(false)
 
     // Updates video source when video ID changes via any of the three below functions. (selectVideo, nextTrack, or prevTrack). Also controls the button animation state based on play state
     useEffect(() => {
@@ -65,6 +66,7 @@ const VideoCommander = () => {
                 prevTrack={prevTrack}
                 pauseTrack={pauseTrack}
                 playing={playing}
+                setIndexShown={setIndexShown}
             />
             <VideoIndex 
                 selectTrack={selectTrack}
