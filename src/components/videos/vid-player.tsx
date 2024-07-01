@@ -18,13 +18,12 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: V
 
  
     return (
-        <div>
+        <div className='video-player-wrapper'>
             <h1 className="video-title">{currVideo.title}</h1>
             <div className="controls-container">
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
                 <button className="playBtn customBtn" onClick={() => pauseTrack()}></button>
                 <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
-            </div>
                 <input 
                     onChange={event => setVolume(Number(event.target.value))} 
                     type="range" 
@@ -33,6 +32,7 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing }: V
                     min='0' 
                     max="1" 
                     step="0.1"/>
+            </div>
             <ReactPlayer
                 className="video-player"
                 url={`https://www.youtube.com/watch?v=${currVideo.id}`}

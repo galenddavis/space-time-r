@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import "./timer.css"
 
 const Timer: React.FC = () => {
   const [seconds, setSeconds] = useState<number>(1500); // 25 minutes as seconds
@@ -40,7 +41,7 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='timer-wrapper'>
       <div>
         <button onClick={() => handleModeChange('short')}>Short (5 min)</button>
         <button onClick={() => handleModeChange('medium')}>Medium (15 min)</button>

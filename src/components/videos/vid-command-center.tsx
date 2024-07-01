@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Video, videoList } from "../utils/vid-utils"
 import VideoPlayer from "./vid-player"
 import VideoIndex from "./vid-index"
+import "./vid-player.css"
 
 
 
