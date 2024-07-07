@@ -1,30 +1,45 @@
 // import { useState, useEffect } from "react";
 import VideoIndexItem from "./vid-index-item";
 import { Video, videoList } from "../utils/vid-utils";
-import { useState } from "react";
+import { useEffect } from "react";
 
 interface IndexProps {
     selectTrack: (video: Video) => void,
+    indexShown: boolean
 }
 
-const VideoIndex = ({ selectTrack }: IndexProps) => {
-    const [indexVisible, setIndexVisible] = useState<boolean>(false)
+const VideoIndex = ({ selectTrack, indexShown }: IndexProps) => {
+    // const [indexVisible, setIndexVisible] = useState<boolean>(false)
 
-    const showIndex =() => {
+    useEffect(() => {
+        // setIndexVisible(indexShown)
+
         const vidIdx = document.getElementsByClassName('video-index-container')[0]
-        if (indexVisible) {
-            vidIdx.classList.add("hidden")
-        } else if (!indexVisible) {
+        if (indexShown) {
             vidIdx.classList.remove("hidden")
+        } else if (!indexShown) {
+            vidIdx.classList.add("hidden")
         }
-        setIndexVisible(!indexVisible)
-    }
+        console.log("indexShown", indexShown)
+        // setIndexVisible(!indexVisible)
+    }, [indexShown]);
+
+
+    // const showIndex =() => {
+    //     const vidIdx = document.getElementsByClassName('video-index-container')[0]
+    //     if (indexVisible) {
+    //         vidIdx.classList.add("hidden")
+    //     } else if (!indexVisible) {
+    //         vidIdx.classList.remove("hidden")
+    //     }
+    //     setIndexVisible(!indexVisible)
+    // }
 
     return (
         <div className="video-index-wrapper">
-            <button className="index-toggle" onClick={() => showIndex()}>
+            {/* <button className="index-toggle" onClick={() => showIndex()}>
                 Show Tracks
-            </button>
+            </button> */}
             <ul className="video-index-container hidden">
                 {videoList.map(video => (
                     <li className="video-index-item" 

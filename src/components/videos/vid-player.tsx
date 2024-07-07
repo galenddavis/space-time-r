@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react';
+import React, { SetStateAction, useState } from 'react';
 import { Video } from "../utils/vid-utils";
 import ReactPlayer from 'react-player/lazy';  
 
@@ -10,10 +10,11 @@ interface VideoProps {
     prevTrack: () => void,
     pauseTrack: () => void,
     playing: boolean,
-    setIndexShown: (value: boolean) => (value: boolean)
+    indexShown: boolean,
+    setIndexShown: React.Dispatch<SetStateAction<boolean>>
 }
 
-const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, setIndexShown }: VideoProps) => {
+const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, indexShown, setIndexShown }: VideoProps) => {
     
     const [volume, setVolume] = useState<number>(1)
 
@@ -25,7 +26,8 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, set
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
                 <button className="playBtn customBtn" onClick={() => pauseTrack()}></button>
                 <button className="nextBtn customBtn"onClick={() => nextTrack()}></button>
-                <button className="showIndex" onClick={() => setIndexShown()}>Show Index</button>
+                <button className="showIndex" onClick={() => setIndexShown(!indexShown)}>Show Index</button>
+            </div>
                 <input 
                     onChange={event => setVolume(Number(event.target.value))} 
                     type="range" 
@@ -34,7 +36,6 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, set
                     min='0' 
                     max="1" 
                     step="0.1"/>
-            </div>
             <ReactPlayer
                 className="video-player"
                 url={`https://www.youtube.com/watch?v=${currVideo.id}`}

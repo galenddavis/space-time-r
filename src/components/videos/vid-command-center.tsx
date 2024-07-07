@@ -12,7 +12,6 @@ const VideoCommander = () => {
         title: videoList[0].title,
         id: videoList[0].id
     }
-
     
     const [currentVid, setCurrentVid] = useState<Video>(defaultVideo) 
     const [currentIdx, setCurrentIdx] = useState<number>(0)
@@ -66,14 +65,15 @@ const VideoCommander = () => {
                 prevTrack={prevTrack}
                 pauseTrack={pauseTrack}
                 playing={playing}
+                indexShown={indexShown}
                 setIndexShown={setIndexShown}
             />
-            <VideoIndex 
+            <VideoIndex
+                indexShown={indexShown} 
                 selectTrack={selectTrack}
             />
         </div>
     )
-
 }
 
 export default VideoCommander;
