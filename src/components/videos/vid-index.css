@@ -6,33 +6,28 @@
 .video-index-wrapper {
     grid-area: video-index;
     height: 100%;
-    /* display: grid; */
-    /* grid-template-rows: 0fr; */
     max-width: 100%;
     overflow-y: scroll;
     padding: 3rem;
-    /* align-items: start; */
-    /* align-self: start; */
+    scrollbar-color: #9ad1f9 #9badb7;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
+
+
 .video-index-container {
-    /* overflow-y: scroll;
-    overflow-x: hidden; */
     padding: 0;
     overflow: hidden;
-    /* max-width: 100%; */
-
 }
 
 .video-index-item {
-
     border: 1px solid #50595e;
     border-radius: 5px;
     padding: 0px 20px;
     margin: 10px 0;
     background-color: #76848b;
     list-style: none;
-    /* list-style-position: inside; */
     text-align: start;
     cursor: pointer;
     height: 100%;

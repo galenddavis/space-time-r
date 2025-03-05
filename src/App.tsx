@@ -1,13 +1,12 @@
 import Timer from './components/timer/timer'
 import VideoCommander from './components/videos/vid-command-center'
-import './App.css'
-import "./components/timer/timer.css"
+import PlanetCommander from './components/planets/planet-command-center'
 import { Video, videoList } from './components/utils/vid-utils';
 import VideoIndex from './components/videos/vid-index'
 import { useEffect, useState } from 'react';
-// import { useContext, useState } from 'react';
-// import { VideoContext } from './components/contexts/videoContext';
-// import VideoPlayer from './components/videos/vid-player'
+import './App.css'
+import "./components/timer/timer.css"
+import "./components/planets/planet-command.css"
 
 
 
@@ -23,7 +22,6 @@ function App() {
       // const [indexShown, setIndexShown] = useState<boolean>(false)
       const [currentVid, setCurrentVid] = useState<Video>(defaultVideo) 
       const [currentIdx, setCurrentIdx] = useState<number>(0)
-      console.log("APP", currentVid)
 
       useEffect(() => {
         setCurrentVid(videoList[currentIdx])
@@ -33,8 +31,8 @@ function App() {
   return (
     <div className="app-wrapper">
       <Timer/>
+      <PlanetCommander />
       <VideoCommander currVideo={currentVid} currIdx={currentIdx} setCurrentIdx={setCurrentIdx}/>
-      {/* <VideoIndex selectTrack={selectTrack} indexShown={indexShown} setIndexShown={setIndexShown}/> */}
       <VideoIndex setCurrentIdx={setCurrentIdx}/>
     </div>
   )
