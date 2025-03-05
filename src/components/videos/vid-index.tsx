@@ -26,22 +26,22 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
     }, [indexVisible]);
 
 
-    const showIndex =() => {
-        const vidIdx = document.getElementsByClassName('video-index-container')[0]
-        if (indexVisible) {
-            vidIdx.classList.add("hidden")
-        } else if (!indexVisible) {
-            vidIdx.classList.remove("hidden")
-        }
-        setIndexVisible(!indexVisible)
-    }
+    // const showIndex =() => {
+    //     const vidIdx = document.getElementsByClassName('video-index-container')[0]
+    //     if (indexVisible) {
+    //         vidIdx.classList.remove("active")
+    //     } else if (!indexVisible) {
+    //         vidIdx.classList.add("active")
+    //     }
+    //     setIndexVisible(!indexVisible)
+    // }
 
     return (
         <div className="video-index-wrapper">
-            <button className="index-toggle" onClick={() => showIndex()}>
+            <button className="index-toggle" onClick={() => setIndexVisible(!indexVisible)}>
                 Show Tracks
             </button>
-            <ul className="video-index-container hidden">
+            <ul className="video-index-container">
                 {videoList.map((video, idx) => (
                     <li className="video-index-item" 
                         key={video.id}

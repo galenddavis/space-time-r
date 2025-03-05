@@ -6,23 +6,78 @@
 .video-index-wrapper {
     grid-area: video-index;
     height: 100%;
+    /* display: grid; */
+    /* grid-template-rows: 0fr; */
+    max-width: 100%;
     overflow-y: scroll;
+    padding: 3rem;
     /* align-items: start; */
     /* align-self: start; */
 }
 
 .video-index-container {
-    overflow: scroll;
-    /* max-height: 100%; */
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+    padding: 0;
+    overflow: hidden;
+    /* max-width: 100%; */
+
 }
 
 .video-index-item {
+
     border: 1px solid #50595e;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 0px 20px;
     margin: 10px 0;
     background-color: #76848b;
     list-style: none;
+    /* list-style-position: inside; */
     text-align: start;
     cursor: pointer;
+    height: 100%;
+    
 }
+
+
+
+/* Playing with a text scrolling animation */
+
+.video-idx-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* .video-idx-title:not(:hover) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video-idx-title:hover {
+    display: inline-block;
+    white-space: nowrap;
+      animation-name: scroll-text;
+      animation-duration: 7s;
+      animation-timing-function: linear;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+}
+
+@keyframes scroll-text {
+    0% {
+      transform: translateX(0%);
+    }
+    90% {
+      transform: translateX(-100%);
+    }
+    95% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+} */
+
