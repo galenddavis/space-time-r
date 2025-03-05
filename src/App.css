@@ -15,9 +15,10 @@
   height: 100vh;
   width: 100vw;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 2fr 2fr 1fr;
   grid-template-areas: 
-    "planet-area tracklist"
-    "video-player timer"
+    "planet-area timer"
+    "planet-area video-index"
+    "video-controls video-index"
   ;
 }

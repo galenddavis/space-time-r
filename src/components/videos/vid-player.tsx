@@ -52,3 +52,11 @@ const VideoPlayer = ({ currVideo, nextTrack, prevTrack, pauseTrack, playing, ind
 
 export default VideoPlayer;
 
+
+// Additional option grants
+// Four year grant + futher opportunities likely
+// Time to exercise
+// Can exercise after a year if necessary. (90 day window after leaving)
+// Gusto Benefits Providers 
+// Benefits mostly paid premiums
+// 5% match on 401k
