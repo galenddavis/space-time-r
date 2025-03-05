@@ -3,9 +3,18 @@
     display: none;
 }
 
-/* .video-index-wrapper {
-    grid-area: tracklist;
-} */
+.video-index-wrapper {
+    grid-area: video-index;
+    height: 100%;
+    overflow-y: scroll;
+    /* align-items: start; */
+    /* align-self: start; */
+}
+
+.video-index-container {
+    overflow: scroll;
+    /* max-height: 100%; */
+}
 
 .video-index-item {
     border: 1px solid #50595e;
