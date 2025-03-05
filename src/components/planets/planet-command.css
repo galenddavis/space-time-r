@@ -1,0 +1,8 @@
+.planetary-command-wrapper {
+    grid-area: planet-area;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    padding: 3rem;
+    border-radius: 10px;
+}
