@@ -3,11 +3,7 @@
 export interface Video {
     title: string,
     id: string
-  }
-
-// export interface VideoList {
-//     videos: 
-// }
+}
 
 
 // Exporting Video Object
