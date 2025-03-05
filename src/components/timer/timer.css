@@ -1,20 +1,26 @@
 
 .timer-wrapper {
-    grid-area: timer;
-    display: flex;
+    /* grid-area: timer; */
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-around;
+    justify-items: center;
 }
 
 .timer-button-wrapper {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .timer-button-wrapper button {
     max-width: fit-content;
 }
 
-.timer-wrapper p {
+.timer-counter {
     font-size: 50px;
+    margin: 0;
 }
