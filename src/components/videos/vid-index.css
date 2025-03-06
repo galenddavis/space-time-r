@@ -8,10 +8,16 @@
     height: 100%;
     max-width: 100%;
     overflow-y: scroll;
-    padding: 3rem;
+    padding: 2rem;
     scrollbar-color: #9ad1f9 #9badb7;
     scrollbar-width: thin;
     scroll-behavior: smooth;
+}
+
+
+.index-toggle {
+    position: sticky;
+    top: 0;
 }
 
 
