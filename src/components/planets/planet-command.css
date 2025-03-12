@@ -3,6 +3,28 @@
     height: 100%;
     width: 100%;
     background-color: black;
-    padding: 3rem;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.planet-img {
+    transform: translateX(-10vw);
+    height: max-content;
+}
+
+.active-planet {
+    animation: planetary-motion 300s linear infinite;
+}
+
+@keyframes planetary-motion {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(70vw);
+    }
+    
 }
