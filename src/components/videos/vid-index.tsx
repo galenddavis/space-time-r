@@ -21,7 +21,7 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
         } else if (!indexVisible) {
             vidIdx.classList.add("hidden")
         }
-        console.log("indexVisible", indexVisible)
+        // console.log("indexVisible", indexVisible)
         // setIndexVisible(!indexVisible)
     }, [indexVisible]);
 

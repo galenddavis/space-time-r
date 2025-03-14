@@ -12,6 +12,9 @@
     scrollbar-color: #9ad1f9 #9badb7;
     scrollbar-width: thin;
     scroll-behavior: smooth;
+    border-image-source: url("../../assets/dialogue-border.png");
+    border-image-slice: 68;
+    border-image-width: 50px;
 }
 
 
