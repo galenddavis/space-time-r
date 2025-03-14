@@ -10,22 +10,22 @@
     align-items: center;
     justify-content: start;
     border-image-source: url("../../assets/dialogue-border.png");
-    border-image-slice: 68;
+    border-image-slice: 72;
     border-image-width: 50px;
 }
 
 .planet-img {
-    transform: translateX(-10vw);
+    transform: translateX(-20vw);
     height: max-content;
 }
 
 .active-planet {
-    animation: planetary-motion 10s linear;
+    animation: planetary-motion 100s linear infinite;
 }
 
 @keyframes planetary-motion {
     0% {
-        transform: translateX(0vw);
+        transform: translateX(-20vw);
     }
     100% {
         transform: translateX(70vw);

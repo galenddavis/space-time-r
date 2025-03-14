@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-image-outset: 8px;
 }
 
 /* #root {

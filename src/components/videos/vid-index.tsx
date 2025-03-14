@@ -39,20 +39,23 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
     return (
         <div className="video-index-wrapper">
             <button className="index-toggle" onClick={() => setIndexVisible(!indexVisible)}>
-                Show Tracks
+                {/* Show Tracks */}
             </button>
-            <ul className="video-index-container">
-                {videoList.map((video, idx) => (
-                    <li className="video-index-item" 
-                        key={video.id}
-                        onClick={() => setCurrentIdx(idx)}    
-                    >
-                        <VideoIndexItem
-                            video={video}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <div className="video-index-wrapper-inner">
+                <ul className="video-index-container">
+                    {videoList.map((video, idx) => (
+                        <li className="video-index-item" 
+                            key={video.id}
+                            onClick={() => setCurrentIdx(idx)}    
+                        >
+                            <VideoIndexItem
+                                video={video}
+                            />
+                        </li>
+                    ))}
+                </ul>
+
+            </div>
         </div>
     )
 }

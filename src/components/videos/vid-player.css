@@ -25,8 +25,9 @@
   align-items: start;
   padding : 2rem 2rem;
   /* border: 8px solid transparent; */
+  background-image: url("../../assets/dialogue-box.png");
   border-image-source: url("../../assets/dialogue-border.png");
-  border-image-slice: 68;
+  border-image-slice: 72;
   border-image-width: 50px;
 }
 
@@ -37,6 +38,7 @@
 .video-title {
   font-size: 20px;
   color: #f3f3f3;
+  /* border: 2px solid red; */
 }
 
 .controls-container {
@@ -53,22 +55,22 @@
   background-position: 0 0;
   border-radius: 0;
   /* height: 106px; */
-  width: 197px;
-  aspect-ratio: 1.85/1;
+  width: 190px;
+  aspect-ratio: 1.5/1;
   border: none;
   background-size: auto 100%;
 }
 
 .playBtn {
-  background-image: url("../../assets/play-btn-animation-sprite-sheet.png");
+  background-image: url("../../assets/play-btn-small.svg");
 }
 
 .nextBtn {
-  background-image: url("../../assets/next-btn-animation-sprite-sheet.png");
+  background-image: url("../../assets/next-btn.svg");
 }
 
 .prevBtn {
-  background-image: url("../../assets/prev-btn-animation-sprite-sheet.png");
+  background-image: url("../../assets/back-btn.svg");
 }
 
 .playBtn.playing {

@@ -9,8 +9,9 @@
     align-items: center;
     justify-content: space-around;
     justify-items: center;
+    background-image: url("../../assets/dialogue-box.png");
     border-image-source: url("../../assets/dialogue-border.png");
-    border-image-slice: 68;
+    border-image-slice: 72;
     border-image-width: 50px;
 }
 
