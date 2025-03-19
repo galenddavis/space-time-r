@@ -1,18 +1,15 @@
 
 .timer-wrapper {
-    /* grid-area: timer; */
-    grid-column: 2/3;
-    grid-row: 1/2;
+    grid-area: timer;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
     justify-content: space-around;
     justify-items: center;
     background-image: url("../../assets/dialogue-box.png");
-    border-image-source: url("../../assets/dialogue-border.png");
-    border-image-slice: 72;
-    border-image-width: 50px;
+    border-image-source: url("../../assets/dialogue-border2.svg");
+    border-image-slice: 8;
+    border-image-width: 35px;
 }
 
 .timer-button-wrapper {
@@ -21,10 +18,19 @@
 }
 
 .timer-button-wrapper button {
+    font-family: "Micro 5", sans-serif;
+    font-size: 25px;
     max-width: fit-content;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px;
 }
 
 .timer-counter {
-    font-size: 50px;
+    font-size: 130px;
+    line-height: 20px;
     margin: 0;
+    font-family: "Micro 5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }

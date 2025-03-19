@@ -41,12 +41,12 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div className='timer-wrapper'>
+    <div className='timer-wrapper bordered'>
       <p className='timer-counter'>{formatTime(seconds)}</p>
       <div className='timer-button-wrapper'>
-        <button onClick={() => handleModeChange('short')}>:05</button>
-        <button onClick={() => handleModeChange('medium')}>:15</button>
-        <button onClick={() => handleModeChange('long')}>:25</button>
+        <button onClick={() => handleModeChange('short')} aria-label="five minutes">:05</button>
+        <button onClick={() => handleModeChange('medium')} aria-label="five minutes">:15</button>
+        <button onClick={() => handleModeChange('long')} aria-label="five minutes">:25</button>
       </div>
     </div>
   );
