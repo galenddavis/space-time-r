@@ -9,9 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    border-image-source: url("../../assets/dialogue-border.png");
-    border-image-slice: 72;
-    border-image-width: 50px;
+    border-image-source: url("../../assets/dialogue-border2.svg");
+    border-image-slice: 8;
+    border-image-width: 35px;
 }
 
 .planet-img {

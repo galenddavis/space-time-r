@@ -26,7 +26,7 @@ const PlanetCommander = () => {
 
 
     return (
-        <div className="planetary-command-wrapper">
+        <div className="planetary-command-wrapper boardered">
             <img src={planetImg} alt="" id="planet-img" className="planet-img active-planet" />
         </div>
     );

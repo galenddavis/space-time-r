@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
   border-image-outset: 8px;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* #root {
