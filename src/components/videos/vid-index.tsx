@@ -16,10 +16,13 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
         // setIndexVisible(indexShown)
 
         const vidIdx = document.getElementsByClassName('video-index-container')[0]
+        const idxBtn = document.getElementsByClassName('index-toggle')[0]
         if (indexVisible) {
             vidIdx.classList.remove("hidden")
+            idxBtn.classList.add("active")
         } else if (!indexVisible) {
             vidIdx.classList.add("hidden")
+            idxBtn.classList.remove("active")
         }
         // console.log("indexVisible", indexVisible)
         // setIndexVisible(!indexVisible)
@@ -37,10 +40,8 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
     // }
 
     return (
-        <div className="video-index-wrapper">
-            <button className="index-toggle" onClick={() => setIndexVisible(!indexVisible)}>
-                {/* Show Tracks */}
-            </button>
+        <div className="video-index-wrapper bordered">
+
             <div className="video-index-wrapper-inner">
                 <ul className="video-index-container">
                     {videoList.map((video, idx) => (
@@ -56,6 +57,9 @@ const VideoIndex = ({ setCurrentIdx }: IndexProps) => {
                 </ul>
 
             </div>
+            <button className="index-toggle" onClick={() => setIndexVisible(!indexVisible)}>
+                {/* Show Tracks */}
+            </button>
         </div>
     )
 }

@@ -5,6 +5,9 @@
 
 .video-index-wrapper {
     grid-area: video-index;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    
     height: 100%;
     max-width: 100%;
     overflow-y: hidden;
@@ -14,9 +17,9 @@
     scroll-behavior: smooth;
     background-image: url("../../assets/dialogue-box-tall.png");
     background-size: contain;
-    border-image-source: url("../../assets/dialogue-border.png");
-    border-image-slice: 72;
-    border-image-width: 50px;
+    border-image-source: url("../../assets/dialogue-border2.svg");
+    border-image-slice: 8;
+    border-image-width: 35px;
 }
 
 
@@ -25,24 +28,24 @@
   background-repeat: no-repeat;
   background-position: 0 0;
   border-radius: 0;
-  width: 200px;
-  aspect-ratio: 2.64/1;
+  width: 96%;
+  aspect-ratio: 3/1;
   border: none;
   background-size: auto 100%;
-  background-image: url("../../assets/menu-btn-animation-long-sprite-sheet.png");
+  background-image: url("../../assets/index-btn-longer.svg");
 }
 
-.index-toggle:hover {
-  background-position: 88% 0;
+.index-toggle:hover,
+.index-toggle.active {
+  background-position: 100% 0;
 }
 
 .video-index-wrapper-inner {
   border-radius: 5px;
   overflow-y: scroll;
-  scrollbar-color: #9ad1f9 transparent;
+  scrollbar-color: #378dae transparent;
   scrollbar-width: thin;
   scroll-behavior: smooth;
-  height: 90%;
 }
 
 

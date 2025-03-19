@@ -28,7 +28,7 @@ const VideoPlayer = ({
 
  
     return (
-        <div className='video-player-wrapper'>
+        <div className='video-player-wrapper bordered'>
             <h1 className="video-title">{currVideo.title}</h1>
             <div className="controls-container">
                 <button className="prevBtn customBtn"onClick={() => prevTrack()}></button>
