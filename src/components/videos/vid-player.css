@@ -161,7 +161,7 @@ input[type="range"]::-moz-range-track {
 @media screen and (max-width: 768px) {
 
   .video-player-wrapper {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 
   .controls-container {
@@ -171,6 +171,13 @@ input[type="range"]::-moz-range-track {
 
   .controls-container > input {
     margin-top: 1rem;
+  }
+
+  .video-title {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .customBtn {

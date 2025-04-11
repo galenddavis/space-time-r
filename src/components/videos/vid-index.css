@@ -80,6 +80,34 @@
     text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 768px) {
+
+  .video-index-wrapper {
+    padding: 0.75rem;
+  }
+
+  .video-index-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-toggle {
+    width: 30%;
+    display: none;
+  }
+
+  .video-idx-title {
+    margin: 0;
+  }
+
+  .video-index-wrapper-inner {
+    overflow-y: scroll;
+  }
+
+
+}
+
+
 /* .video-idx-title:not(:hover) {
     white-space: nowrap;
     overflow: hidden;

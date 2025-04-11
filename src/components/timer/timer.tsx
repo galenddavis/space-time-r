@@ -63,9 +63,9 @@ const Timer = ({timerDuration, setTimerDuration}: TimerProps) => {
     <div className='timer-wrapper bordered'>
       <p className='timer-counter'>{formatTime(seconds)}</p>
       <div className='timer-button-wrapper'>
-        <button onClick={() => handleModeChange('short')} aria-label="five minutes">:05</button>
-        <button onClick={() => handleModeChange('medium')} aria-label="five minutes">:15</button>
-        <button onClick={() => handleModeChange('long')} aria-label="five minutes">:25</button>
+        <button className='shortBtn customBtn' onClick={() => handleModeChange('short')} aria-label="five minutes"></button>
+        <button className='mediumBtn customBtn' onClick={() => handleModeChange('medium')} aria-label="five minutes"></button>
+        <button className='longBtn customBtn' onClick={() => handleModeChange('long')} aria-label="five minutes"></button>
       </div>
     </div>
   );

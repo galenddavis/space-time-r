@@ -24,13 +24,13 @@
     font-style: normal;
     margin: 0;
 }
-.timer-button-wrapper button {
+/* .timer-button-wrapper button {
     font-family: "Micro 5", sans-serif;
     font-size: 25px;
     max-width: fit-content;
     font-weight: 400;
     font-style: normal;
-}
+} */
 
 .timer-counter {
     font-size: 130px;
@@ -39,4 +39,36 @@
     font-family: "Micro 5", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.timer-button-wrapper >.customBtn {
+    background-color: rgba(255, 250, 240, 0);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    border-radius: 0;
+    /* height: 106px; */
+    width: 190px;
+    aspect-ratio: 1.5/1;
+    border: none;
+}
+
+.shortBtn {
+    background: url("../../assets/5minbtn.svg");
+}
+.mediumBtn {
+    background: url("../../assets/15minbtn.svg");
+}
+.longBtn {
+    background: url("../../assets/25minbtn.svg");
+}
+
+@media screen and (max-width: 768px) {
+    .timer-counter {
+        font-size: 80px;
+    }
+
+    .timer-button-wrapper > .customBtn {
+        width: 90px;
+    }
 }
