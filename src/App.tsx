@@ -23,6 +23,9 @@ function App() {
       const [currentVid, setCurrentVid] = useState<Video>(defaultVideo) 
       const [currentIdx, setCurrentIdx] = useState<number>(0)
 
+      const [currentTimer, setCurrentTimer] = useState<"short" | "medium" | "long">("long") 
+      
+
       useEffect(() => {
         setCurrentVid(videoList[currentIdx])
       }, [currentIdx])
@@ -30,8 +33,8 @@ function App() {
   
   return (
     <div className="app-wrapper">
-      <Timer/>
-      <PlanetCommander />
+      <Timer timerDuration={currentTimer} setTimerDuration={setCurrentTimer} />
+      <PlanetCommander timerDuration={currentTimer} />
       <VideoCommander currVideo={currentVid} currIdx={currentIdx} setCurrentIdx={setCurrentIdx}/>
       <VideoIndex setCurrentIdx={setCurrentIdx}/>
     </div>
