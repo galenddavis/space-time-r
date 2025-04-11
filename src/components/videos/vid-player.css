@@ -89,33 +89,100 @@ button:focus-visible {
 
 /* Test Slider Styling */
 
-input[type=range] {
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
   width: 100%;
-  max-width: 200px;
-  /* background-color: red; */
+  max-width: 300px;
+  background-color: transparent;
   cursor: pointer;
 }
 
-input[type=range]:focus {
+
+
+input[type="range"]:focus {
   outline: none;
 }
 
-input[type=range]::-ms-track {
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
-input[type=range]::-webkit-slider-thumb,
-input[type=range]::-moz-range-thumb {
-  height: 40px;
-  width: 40px;
-  background: url("../../assets/25minPlanet.svg") no-repeat center center;
+/* Webkit Range Styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 60px;
+  height: 30px;
+  background: url("../../assets/range-slider.svg");
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border: none;
+  border-radius: 0;
   
 }
 
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: url("../../assets/range-bar.svg");
+  /* aspect-ratio: 2.4/1; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  height: 100%;
+  width: 100%;
+
+}
+
+/* Firefox Range Styling */
+input[type="range"]::-moz-range-thumb {
+  width: 60px;
+  height: 30px;
+  background-color: red;
+  background: url("../../assets/range-slider.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+  
+}
+
+input[type="range"]::-moz-range-track {
+  background: url("../../assets/range-bar.svg");
+  aspect-ratio: 2.4/1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .video-player-wrapper {
+    padding: 0.5rem;
+  }
+
+  .controls-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .controls-container > input {
+    margin-top: 1rem;
+  }
+
+  .customBtn {
+    width: 90px;
+  }
+}
+
+/* input[type="range"]::-webkit-slider-runnable-track {
+  background: url("../../assets/range-bar.svg");
+  height: 0.5rem;
+  border-radius: 0.5rem;
+} */
 
 /* input[type=range]:focus {
   outline: none;
@@ -201,3 +268,5 @@ input[type=range]:focus::-ms-fill-upper {
 input[type="range"]::-moz-range-progress {
   background-color: #367ebd; 
 } */
+
+
