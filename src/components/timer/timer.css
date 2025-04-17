@@ -41,26 +41,25 @@
     font-style: normal;
 }
 
-.timer-button-wrapper >.customBtn {
+/* .timer-button-wrapper >.customBtn {
     background-color: rgba(255, 250, 240, 0);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: auto 100%;
     border-radius: 0;
-    /* height: 106px; */
     width: 190px;
     aspect-ratio: 1.5/1;
     border: none;
-}
+} */
 
 .shortBtn {
-    background: url("../../assets/5minbtn.svg");
+    background-image: url("../../assets/5minbtn.svg");
 }
 .mediumBtn {
-    background: url("../../assets/15minbtn.svg");
+    background-image: url("../../assets/15minbtn.svg");
 }
 .longBtn {
-    background: url("../../assets/25minbtn.svg");
+    background-image: url("../../assets/25minbtn.svg");
 }
 
 @media screen and (max-width: 768px) {

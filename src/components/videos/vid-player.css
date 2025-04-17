@@ -49,17 +49,16 @@
   /* margin-bottom: 500px; */
 }
 
-.customBtn {
+/* .customBtn {
   background-color: rgba(255, 250, 240, 0);
   background-repeat: no-repeat;
   background-position: 0 0;
   border-radius: 0;
-  /* height: 106px; */
-  width: 190px;
+  width: 130px;
   aspect-ratio: 1.5/1;
   border: none;
   background-size: auto 100%;
-}
+} */
 
 .playBtn {
   background-image: url("../../assets/play-btn-small.svg");
