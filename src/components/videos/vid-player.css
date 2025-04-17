@@ -157,10 +157,11 @@ input[type="range"]::-moz-range-track {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 
   .video-player-wrapper {
     padding: 0.75rem;
+    align-items: center;
   }
 
   .controls-container {
