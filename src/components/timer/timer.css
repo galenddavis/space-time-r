@@ -62,6 +62,16 @@
     background-image: url("../../assets/25minbtn.svg");
 }
 
+@media screen and (max-width: 1025px) {
+    .timer-counter {
+        font-size: 80px;
+    }
+
+    .timer-button-wrapper > .customBtn {
+        width: 80px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .timer-counter {
         font-size: 80px;

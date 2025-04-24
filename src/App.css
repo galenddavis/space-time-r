@@ -34,6 +34,13 @@
   background-size: auto 100%;
 }
 
+
+@media screen and (max-width: 1025px) {
+  .app-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .app-wrapper {
     padding: 1rem;
