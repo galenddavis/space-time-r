@@ -81,3 +81,9 @@
         width: 90px;
     }
 }
+
+@media screen and (max-height: 780px) {
+    .timer-counter {
+        font-size: 75px;
+    }
+}
