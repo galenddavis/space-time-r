@@ -7,6 +7,7 @@
     justify-content: space-around;
     justify-items: center;
     background-image: url("../../assets/dialogue-box.png");
+    background-size: cover;
     border-image-source: url("../../assets/dialogue-border2.svg");
     border-image-slice: 8;
     border-image-width: 35px;
