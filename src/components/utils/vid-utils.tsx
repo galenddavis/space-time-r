@@ -9,7 +9,15 @@ export interface Video {
 // Exporting Video Object
 export const videoList = [
     {
-        title: "Celeste - Complete Soundtrack - Full OST Album",
+        title: "Relaxing in Skyrim",
+        id: "nRe3xFeyhVY"
+    },
+    {
+        title: "Raining in Skyrim",
+        id: "-wPg1tNEWmo"
+    },
+    {
+        title: "Celeste - OST",
         id: "2JsYHpiH2xs"
     },
     {
@@ -17,47 +25,47 @@ export const videoList = [
         id: "Jl1_m1OtkpE"
     },
     {
-        title: "Ambient 3 : Meditations [Stretched]",
+        title: "Ambient 3 : Meditations",
         id: "G1xuZSP05Jo"
     },
     {
-        title: "★ Space Ambient Music",
+        title: "★ Ambient Space",
         id: "ztVV54sPOns"
     },
     {
-        title: "Space Traveling [Lo-Fi / Jazz Hop / Chill Mix",
+        title: "Space Traveling",
         id: "3ST4fDVyAzA"
     },
     {
-        title: "Purrple Cat - Distant Worlds 🪐 [lofi hip hop/relaxing beats]",
+        title: "Distant Worlds 🪐",
         id: "rHh1uQndXJ4"
     },
     {
-        title: "5AM IN ＴＯＫＹＯ - Mellow chill ' jazz hip hop beats",
+        title: "5AM IN ＴＯＫＹＯ",
         id: "liHgt4CbodY"
     }, 
     {
-        title: "ＳＰＡＣＥ　ＴＲＩＰ [ Chillwave - Synthwave - Retrowave Mix ]",
+        title: "ＳＰＡＣＥ　ＴＲＩＰ",
         id: "wOMwO5T3yT4"
     },
     {
-        title: "Hardspace: Shipbreaker - Americana Beats to Chill to",
+        title: "Hardspace: Shipbreaker",
         id: "JxTyMVPaOXY"
     },
     {
-        title: "Outer Wilds Soundtrack (Andrew Prahlow)",
+        title: "Outer Wilds - OST",
         id: "JPyaFR7poL4"
     },
     {
-        title: "Space Ambient Music • [ INTERSTELLAR SPACE JOURNEY ] •",
+        title: "[ INTERSTELLAR SPACE JOURNEY ]",
         id: "8wLwxmjrZj8"
     },
     {
-        title: "КОСМИЧЕСКАЯ МУЗЫКА [ Space Galaxy Music ] Космос, Звезды, Планеты",
+        title: "[ Space Galaxy ]",
         id: "_hHwz1UWJmI"
     },
     {
-        title: "COSMIC RELAXATION: 8 HOURS of 4K Deep Space NASA Footage + Chillout Music for Studying, Working, Etc",
+        title: "COSMIC RELAXATION",
         id: "Y_plhk1FUQA"
     },
     // {
