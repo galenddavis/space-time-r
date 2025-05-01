@@ -164,6 +164,7 @@ input[type="range"]::-moz-range-track {
   .video-player-wrapper {
     padding: 0.75rem;
     align-items: center;
+    justify-content: center;
   }
 
   .controls-container {
