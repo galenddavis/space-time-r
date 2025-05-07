@@ -15,6 +15,7 @@
 
 .timer-button-wrapper {
     display: flex;
+    padding: 1rem;
     /* flex-direction: column; */
 }
 
@@ -25,13 +26,7 @@
     font-style: normal;
     margin: 0;
 }
-/* .timer-button-wrapper button {
-    font-family: "Micro 5", sans-serif;
-    font-size: 25px;
-    max-width: fit-content;
-    font-weight: 400;
-    font-style: normal;
-} */
+
 
 .timer-counter {
     font-size: 130px;
@@ -42,16 +37,6 @@
     font-style: normal;
 }
 
-/* .timer-button-wrapper >.customBtn {
-    background-color: rgba(255, 250, 240, 0);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: auto 100%;
-    border-radius: 0;
-    width: 190px;
-    aspect-ratio: 1.5/1;
-    border: none;
-} */
 
 .shortBtn {
     background-image: url("../../assets/5minbtn.svg");
@@ -62,6 +47,10 @@
 .longBtn {
     background-image: url("../../assets/25minbtn.svg");
 }
+
+.shortBtn:hover, .mediumBtn:hover, .longBtn:hover {
+    background-position: 100% 0;
+  }
 
 @media screen and (max-width: 1025px) {
     .timer-counter {
