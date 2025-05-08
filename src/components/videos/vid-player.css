@@ -179,9 +179,6 @@ input[type="range"]::-moz-range-track {
     text-overflow: ellipsis;
   }
 
-  .customBtn {
-    width: 90px;
-  }
 }
 
 /* input[type="range"]::-webkit-slider-runnable-track {
