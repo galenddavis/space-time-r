@@ -9,6 +9,10 @@ export interface Video {
 // Exporting Video Object
 export const videoList = [
     {
+        title: "Blade Runner 1982 - OST",
+        id:"EsmHr45H204"
+    },
+    {
         title: "Relaxing in Skyrim",
         id: "nRe3xFeyhVY"
     },
@@ -33,41 +37,45 @@ export const videoList = [
         id: "ztVV54sPOns"
     },
     {
-        title: "Space Traveling",
-        id: "3ST4fDVyAzA"
-    },
-    {
-        title: "Distant Worlds 🪐",
-        id: "rHh1uQndXJ4"
-    },
-    {
-        title: "5AM IN ＴＯＫＹＯ",
-        id: "liHgt4CbodY"
-    }, 
-    {
-        title: "ＳＰＡＣＥ　ＴＲＩＰ",
-        id: "wOMwO5T3yT4"
-    },
-    {
-        title: "Hardspace: Shipbreaker",
-        id: "JxTyMVPaOXY"
-    },
-    {
         title: "Outer Wilds - OST",
         id: "JPyaFR7poL4"
     },
     {
-        title: "[ INTERSTELLAR SPACE JOURNEY ]",
-        id: "8wLwxmjrZj8"
+        title: "Castlevania - Symphony of the Night - OST",
+        id: "0w7ff_CqK-E"
     },
-    {
-        title: "[ Space Galaxy ]",
-        id: "_hHwz1UWJmI"
-    },
-    {
-        title: "COSMIC RELAXATION",
-        id: "Y_plhk1FUQA"
-    },
+    // {
+    //     title: "Space Traveling",
+    //     id: "3ST4fDVyAzA"
+    // },
+    // {
+    //     title: "Distant Worlds 🪐",
+    //     id: "rHh1uQndXJ4"
+    // },
+    // {
+    //     title: "5AM IN ＴＯＫＹＯ",
+    //     id: "liHgt4CbodY"
+    // }, 
+    // {
+    //     title: "ＳＰＡＣＥＴＲＩＰ",
+    //     id: "wOMwO5T3yT4"
+    // },
+    // {
+    //     title: "Hardspace: Shipbreaker",
+    //     id: "JxTyMVPaOXY"
+    // },
+    // {
+    //     title: "[ INTERSTELLAR SPACE JOURNEY ]",
+    //     id: "8wLwxmjrZj8"
+    // },
+    // {
+    //     title: "[ Space Galaxy ]",
+    //     id: "_hHwz1UWJmI"
+    // },
+    // {
+    //     title: "COSMIC RELAXATION",
+    //     id: "Y_plhk1FUQA"
+    // },
     // {
     //     // Can't Embed
     //     title: "Ｓｐａｃｅ Ｌｏｕｎｇｅ | Ｃｈｉｌｌ Ｍｉｘ", 
