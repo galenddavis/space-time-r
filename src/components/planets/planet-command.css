@@ -15,7 +15,7 @@
 }
 
 .planet-img {
-    transform: translateX(0vw);
+    transform: translateX(-5vw);
     height: max-content;
 }
 
@@ -25,7 +25,7 @@
 
 @keyframes planetary-motion {
     0% {
-        transform: translateX(0vw);
+        transform: translateX(-5vw);
     }
     100% {
         transform: translateX(70vw);

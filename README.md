@@ -32,3 +32,6 @@ This was the compromise between my original concept of watching a journey throug
 ![tales of symphonia](./src/assets/Tales-of-Symphonia.jpg)
 #### Final Fantasy 7
 ![final fantasy 7](./src/assets/FF7.png)
+
+
+##

@@ -15,6 +15,19 @@ const PlanetCommander = ({ timerDuration }: PlanetCommanderProps) => {
 
 
 
+
+    function restartAnimation() {
+        const planet = document.getElementById("planet-img")
+        if (planet) {
+            planet.style.animationName = "none";
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                planet.style.animationName = ""
+              }, 0);
+            });
+        }
+      }
+
     useEffect(() => {
         const modeDurations: Record<'short' | 'medium' | 'long', number> = {
             short: 300,   // 5 minutes as seconds
@@ -25,6 +38,7 @@ const PlanetCommander = ({ timerDuration }: PlanetCommanderProps) => {
         const duration = modeDurations[timerDuration] + "s"
         if (planet) {
             planet.style.animationDuration = duration
+            restartAnimation()
 
         }
         const setPlanet = () => {
@@ -59,11 +73,14 @@ const PlanetCommander = ({ timerDuration }: PlanetCommanderProps) => {
         });
     }
 
+   
+
 
 
     return (
         <div className="planetary-command-wrapper boardered">
             <img src={currPlanet} alt="" id="planet-img" className="planet-img active-planet" />
+            {/* <button onClick={() => restartAnimation()}>Restart Animation</button> */}
         </div>
     );
 }
